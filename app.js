@@ -96,8 +96,14 @@ console.log(`
 const EventEmitter = require('events')
 const emitter = new EventEmitter()
 
-emitter.on('messageLogged', function() {
-    console.log('Listener called')
+// In ES6, you can use arrow operator:
+// emitter.on('messageLogged', (arg) => {
+emitter.on('messageLogged', function(arg) {
+    console.log('Listener called', arg)
 })
 
-emitter.emit('messageLogged')
+// It is a good practice to encapsulate event arguments into an object
+emitter.emit('messageLogged', {
+    id: 1,
+    url: 'http://'
+})
