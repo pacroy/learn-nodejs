@@ -13,4 +13,11 @@ sayHello('Eddie')
 // clearTimeout()
 // setInterval()
 // clearInterval()
-// The above are belong to the window object
+
+/* In browser, these global objects are within `window` object.
+     All declared variables are also added to `window` object.
+   In node, these global objects are within `global` object.
+     However, declared variables are not added to `global` object.
+*/
+var message = 'Hi'
+console.log(global.message)
