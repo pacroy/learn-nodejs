@@ -70,3 +70,20 @@ let freeMemory = os.freemem();
 // Template string is available from ES6 / ES2015 / ECMAScript 6
 console.log(`Total Memory: ${totalMemory}`)
 console.log(`Free Memory : ${freeMemory}`)
+
+console.log(`
+================================================================================
+6. File System Module
+================================================================================`)
+const fs = require('fs')
+// fs usually provides both async and sync version of functions
+
+// Sync version
+const files = fs.readdirSync('./')
+console.log(files)
+
+// Async version, usually accept function as the last parameter
+fs.readdir('./', function(err, files) {
+    if (err) console.log('Error:', err)
+    else console.log(files)
+})
