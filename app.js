@@ -48,7 +48,7 @@ logger('Hello module!')
 
 console.log(`
 ================================================================================
-3. Path Module
+5. Path Module
 ================================================================================`)
 /*
 Head to nodejs.org -> Docs -> vxx.xx API  and you'll see all built-in modules or global objects
@@ -58,3 +58,15 @@ e.g. https://nodejs.org/dist/latest-v16.x/docs/api/
 const path = require('path')
 let pathObject = path.parse(__filename);
 console.log(pathObject)
+
+console.log(`
+================================================================================
+6. OS Module
+================================================================================`)
+const os = require('os')
+let totalMemory= os.totalmem();
+let freeMemory = os.freemem();
+
+// Template string is available from ES6 / ES2015 / ECMAScript 6
+console.log(`Total Memory: ${totalMemory}`)
+console.log(`Free Memory : ${freeMemory}`)
