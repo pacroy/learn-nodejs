@@ -34,7 +34,11 @@ So we should avoid using global scope for functions and variables.
 Instead, we should encapsulate things in modules and use `app.js` as the main module only.
 */
 
-/*
-In Node, every .js file is a module.
-*/
+// In Node, every .js file is a module.
 console.log(module)
+
+// Load and call other local module
+const logger = require('./logger') // Node auto recognize `.js` files
+console.log(logger)
+logger('Hello module!')
+// logger = 1   // This will end up in TypeError
