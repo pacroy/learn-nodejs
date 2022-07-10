@@ -10,3 +10,19 @@ module.exports.log = log
 
 // We can also assign to exports directly if we have only 1 object to export
 module.exports = log
+
+// Or in short
+exports = log
+
+console.log(`
+================================================================================
+4. Module Wrapper Function
+================================================================================`)
+/*
+Behind the scene, moduel is wrapped within a function:
+(function (exports, require, module, __filename, __dirname) {
+    ...
+})
+*/
+console.log(__filename)
+console.log(__dirname)
