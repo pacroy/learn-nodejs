@@ -45,3 +45,16 @@ const logger = require('./logger') // Node auto recognize `.js` files
 console.log(logger)
 logger('Hello module!')
 // logger = 1   // This will end up in TypeError
+
+console.log(`
+================================================================================
+3. Path Module
+================================================================================`)
+/*
+Head to nodejs.org -> Docs -> vxx.xx API  and you'll see all built-in modules or global objects
+e.g. https://nodejs.org/dist/latest-v16.x/docs/api/
+*/
+
+const path = require('path')
+let pathObject = path.parse(__filename);
+console.log(pathObject)
