@@ -11,9 +11,6 @@ module.exports.log = log
 // We can also assign to exports directly if we have only 1 object to export
 module.exports = log
 
-// Or in short
-exports = log
-
 console.log(`
 ================================================================================
 4. Module Wrapper Function

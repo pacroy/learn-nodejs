@@ -105,5 +105,18 @@ emitter.on('messageLogged', function(arg) {
 // It is a good practice to encapsulate event arguments into an object
 emitter.emit('messageLogged', {
     id: 1,
-    url: 'http://'
+    url: 'http://logger'
 })
+
+console.log(`
+================================================================================
+8. Extending EventHandler
+================================================================================`)
+
+const Logger2 = require('./logger2')
+const logger2 = new Logger2()
+
+logger2.on('messageLogged', function(arg) {
+    console.log('Listener2 called', arg)
+})
+logger2.log('sample message')
