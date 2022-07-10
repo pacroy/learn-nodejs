@@ -110,9 +110,8 @@ emitter.emit('messageLogged', {
 
 console.log(`
 ================================================================================
-8. Extending EventHandler
+8. Extending EventEmitter
 ================================================================================`)
-
 const Logger2 = require('./logger2')
 const logger2 = new Logger2()
 
@@ -120,3 +119,30 @@ logger2.on('messageLogged', function(arg) {
     console.log('Listener2 called', arg)
 })
 logger2.log('sample message')
+
+console.log(`
+================================================================================
+8. HTTP Module
+================================================================================`)
+const http = require('http')
+const server = http.createServer((req, res) => { // This is an EventEmitter
+    if ( req.url === '/' ) {
+        res.write('Hello World')
+        res.end()
+    }
+
+    if ( req.url === '/api/files' ) {
+        res.write(JSON.stringify(files))
+        res.end()
+    }
+})
+
+// server.on('connection', (socket) => {    // Server has various events, refer documentation
+//     console.log('New connection')
+// })
+
+server.listen(3000)
+
+console.log('Listening on port 3000...')
+
+// In the real world scenario, we don't use this http module but the Express framework to handle HTTP requests instead
